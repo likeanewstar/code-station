@@ -1,0 +1,28 @@
+---
+title: JavaScript 배열 메서드
+sidebar_position: 1
+---
+
+import CodeBlock from '@site/src/components/CodeBlock';
+
+# JavaScript 배열 메서드 예제
+
+## Array.map()
+
+배열의 각 요소를 변환하여 새로운 배열을 만듭니다.
+
+<CodeBlock title="map() 메서드 예제" language="javascript">
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // [2, 4, 6, 8, 10]
+</CodeBlock>
+
+## Array.filter()
+
+조건에 맞는 요소만 선택하여 새로운 배열을 만듭니다.
+
+<CodeBlock title="filter() 메서드 예제" language="javascript">
+const numbers = [1, 2, 3, 4, 5, 6];
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers); // [2, 4, 6]
+</CodeBlock> 
