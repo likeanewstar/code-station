@@ -11,7 +11,7 @@ const config = {
 
   // GitHub Pages 설정
   url: 'https://likeanewstar.github.io',
-  baseUrl: '/code-station/',
+  baseUrl: process.env.NODE_ENV === 'production' ? '/code-station/' : '/',
   organizationName: 'likeanewstar', // GitHub username
   projectName: 'code-station', // repository name
   deploymentBranch: 'gh-pages',
