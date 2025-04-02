@@ -4,27 +4,227 @@
  * work well for content-centric websites.
  */
 
+/* Pretendard 폰트 CDN */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* GSAP 형광 초록 포인트 컬러 */
+  --ifm-color-primary: #0ae448;
+  --ifm-color-primary-dark: #09cd41;
+  --ifm-color-primary-darker: #09c23d;
+  --ifm-color-primary-darkest: #07a032;
+  --ifm-color-primary-light: #0bfb4f;
+  --ifm-color-primary-lighter: #16fb56;
+  --ifm-color-primary-lightest: #3cfc73;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* GSAP 스타일 추가 */
+  --ifm-spacing-horizontal: 2rem;
+  --ifm-container-width-xl: 1400px;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.65;
+  --ifm-navbar-height: 4rem;
+  --ifm-navbar-padding-vertical: 0;
+
+  /* Pretendard 폰트 설정 */
+  --ifm-font-family-base: 'Pretendard Variable', Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-background-color: #0e1015;
+  --ifm-background-surface-color: #1a1d23;
+  --ifm-navbar-background-color: rgba(14, 16, 21, 0.95);
+
+  /* 형광 초록 포인트 컬러 */
+  --ifm-color-primary: #0ae448;
+  --ifm-color-primary-dark: #09cd41;
+  --ifm-color-primary-darker: #09c23d;
+  --ifm-color-primary-darkest: #07a032;
+  --ifm-color-primary-light: #0bfb4f;
+  --ifm-color-primary-lighter: #16fb56;
+  --ifm-color-primary-lightest: #3cfc73;
+
+  /* 본문 텍스트 색상 */
+  --ifm-font-color-base: rgb(187, 186, 166);
+  --ifm-menu-color: rgb(187, 186, 166);
+
+  /* 제목과 볼드 텍스트 색상 */
+  --ifm-heading-color: rgb(255, 252, 228);
+  --ifm-font-color-base-inverse: rgb(255, 252, 228);
+
+  /* 부가 텍스트 색상 */
+  --ifm-color-secondary: rgba(187, 186, 166, 0.8);
+  --ifm-breadcrumb-color-active: var(--ifm-color-primary);
+  --ifm-link-color: var(--ifm-color-primary);
+  --ifm-menu-color-active: var(--ifm-color-primary);
+
+  /* 코드 하이라이팅 */
+  --docusaurus-highlighted-code-line-bg: rgba(10, 228, 72, 0.1);
+}
+
+/* 제목 스타일 추가 강화 */
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] h6 {
+  color: rgb(255, 252, 228);
+}
+
+/* 볼드 텍스트 스타일 */
+[data-theme='dark'] strong {
+  color: rgb(255, 252, 228);
+  font-weight: 600;
+}
+
+/* 사이드바 활성 항목 제목 색상 */
+[data-theme='dark'] .menu__link--active:not(.menu__link--sublist) {
+  color: rgb(255, 252, 228);
+}
+
+/* 문서 내 링크가 아닌 볼드 텍스트 */
+[data-theme='dark'] .markdown strong {
+  color: rgb(255, 252, 228);
+}
+
+/* common */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 네비게이션 바 스타일링 */
+.navbar {
+  backdrop-filter: blur(8px);
+  z-index: 50;
+}
+
+.navbar__brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.navbar__link {
+  font-weight: 500;
+}
+
+/* 문서 스타일링 */
+.markdown {
+  --ifm-h1-font-size: 2.5rem;
+  --ifm-h2-font-size: 2rem;
+  --ifm-h3-font-size: 1.5rem;
+  --ifm-h4-font-size: 1.25rem;
+}
+
+.markdown > h2 {
+  margin-top: 2.5rem;
+}
+
+.markdown > h3 {
+  margin-top: 2rem;
+}
+
+/* 사이드바 스타일링 */
+.menu {
+  padding: 1.5rem !important;
+}
+
+.menu__link {
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.menu__link--active {
+  font-weight: 600;
+}
+
+/* Footer 커스텀 스타일 */
+.footer {
+  --ifm-footer-background-color: var(--ifm-background-surface-color);
+  padding: 2rem var(--ifm-spacing-horizontal);
+}
+
+.footer__copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-crafted {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.footer-crafted .heart {
+  display: inline-flex;
+  transform: translateY(-1px);
+}
+
+/* 코드 블록 스타일링 */
+.theme-code-block {
+  background-color: var(--ifm-background-surface-color) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 카드 및 박스 스타일링 */
+.card {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 네비게이션 바 로고 스타일링 */
+[data-theme='dark'] .navbar__brand {
+  color: rgb(255, 252, 228);
+}
+
+[data-theme='dark'] .navbar__title {
+  color: rgb(255, 252, 228);
+}
+
+/* 로고 호버 효과 */
+[data-theme='dark'] .navbar__brand:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* 네비게이션 바 로고 크기 조정 */
+.navbar__logo {
+  width: 32px;
+  height: 32px;
+}
+
+/* 로고 이미지 비율 유지 */
+.navbar__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 모바일 사이드바 보이지 않는 현상 수정 */
+.navbar-sidebar {
+  height: 100vh;
+}
+
+/* 히어로 섹션 배경색 수정 */
+[data-theme='dark'] .hero {
+  background-color: #1a1d23; /* GSAP 문서의 surface 컬러와 동일 */
+}
+
+/* 필요한 경우 border도 추가 */
+[data-theme='dark'] .hero {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
