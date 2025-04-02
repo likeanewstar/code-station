@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcode_archive=self.webpackChunkcode_archive||[]).push([[1903],{1912:e=>{e.exports=JSON.parse('{"blogBasePath":"/code-station/blog","blogTitle":"Blog","authorsListPath":"/code-station/blog/authors"}')}}]);
