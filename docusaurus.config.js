@@ -11,7 +11,7 @@ const config = {
 
   // GitHub Pages 설정
   url: 'https://likeanewstar.github.io',
-  baseUrl: process.env.NODE_ENV === 'production' ? '/code-station/' : '/',
+  baseUrl: '/', // 개발 환경에서는 그냥 '/'로 설정
   organizationName: 'likeanewstar', // GitHub username
   projectName: 'code-station', // repository name
   deploymentBranch: 'gh-pages',
@@ -24,8 +24,8 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'ko',
-    locales: ['ko'],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
 
   presets: [
@@ -35,8 +35,6 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/likeanewstar/code-station/tree/main/',
         },
         blog: {
@@ -55,27 +53,31 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'Code Station',
         logo: {
           alt: 'Code Station Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: '문서',
+            label: 'Documentation',
           },
-          { to: '/blog', label: '블로그', position: 'left' },
-          {
-            href: 'https://github.com/likeanewstar/code-station',
-            label: 'GitHub',
-            position: 'right',
-          },
+          // { to: '/blog', label: '블로그', position: 'left' },
+          // {
+          //   href: 'https://github.com/likeanewstar/code-station',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
           {
             type: 'search',
             position: 'right',
@@ -84,34 +86,21 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: '문서',
-            items: [
-              {
-                label: '시작하기',
-                type: 'docSidebar',
-                sidebarId: 'tutorialSidebar',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: '커뮤니티',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/likeanewstar/code-station',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Code Station - Newstarion. Built with Docusaurus.`,
+        links: [],
+        copyright: `
+          <div class="footer__copyright">
+            Copyright © ${new Date().getFullYear()} Newstar. All Rights Reserved.
+            <div class="footer-crafted">
+              Made with <span class="heart">💚</span> in Newstarion <span class="sparkle">💫</span>
+            </div>
+          </div>
+        `,
       },
       prism: {
         theme: themes.github,
         darkTheme: themes.dracula,
       },
+      docs: {},
     }),
 }
 
